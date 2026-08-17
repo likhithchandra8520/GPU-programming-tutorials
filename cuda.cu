@@ -54,6 +54,22 @@ int main() {
         std::cout << "  Max Threads Per Block:       " << prop.maxThreadsPerBlock << std::endl;
         std::cout << "  Shared Memory Per Block :     " << prop.sharedMemPerBlock / 1024 << " KB" << std::endl;
         std::cout << "  Warp Size:                   " << prop.warpSize << std::endl;
+        std::cout << "  Clock Rate:                  " << prop.clockRate / 1000 << " MHz" << std::endl;
+        std::cout << "  Memory Clock Rate:           " << prop.memoryClockRate / 1000 << " MHz" << std::endl;
+        std::cout << "  Memory Bus Width:            " << prop.memoryBusWidth << " bits" << std::endl;
+        std::cout << "  L2 Cache Size:               " << prop.l2CacheSize / 1024 << " KB" << std::endl;
+        std::cout << "  Registers Per Block:         " << prop.regsPerBlock << std::endl;
+        std::cout << "  Constant Memory:             " << prop.totalConstMem / 1024 << " KB" << std::endl;
+        std::cout << "  Max Threads Per SM:          " << prop.maxThreadsPerMultiProcessor << std::endl;
+        std::cout << "  Max Block Dimensions:        " << prop.maxThreadsDim[0] << " x "
+                                                       << prop.maxThreadsDim[1] << " x "
+                                                       << prop.maxThreadsDim[2] << std::endl;
+        std::cout << "  Max Grid Dimensions:         "
+                << prop.maxGridSize[0] << " x "
+                << prop.maxGridSize[1] << " x "
+                << prop.maxGridSize[2] << std::endl;
+        std::cout << "  Concurrent Kernels:          " << (prop.concurrentKernels ? "Yes" : "No") << std::endl;
+        std::cout << "  ECC Enabled:                 " << (prop.ECCEnabled ? "Yes" : "No") << std::endl;
         std::cout << std::endl;
     }
 
